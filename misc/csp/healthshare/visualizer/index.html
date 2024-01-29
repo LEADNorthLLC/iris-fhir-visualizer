@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>File Upload and API Response</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="panel left-panel">
+            <h2>Left Panel</h2>
+            <input type="file" id="fileInput" accept=".txt, .xml" />
+            <button onclick="loadFile()">Load File</button>
+            <div id="fileContentWindow">
+                <!-- File content will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="panel right-panel">
+            <h2>Right Panel</h2>
+            <div class="tabs">
+                <div onclick="openTab('sdaTab')">SDA</div>
+                <div onclick="openTab('fhirTab')">FHIR</div>
+            </div>
+            <div id="sdaTab" class="tab-content">
+                <textarea id="sdaResponse" readonly>SDA Response here</textarea>
+            </div>
+            <div id="fhirTab" class="tab-content">
+                <textarea id="fhirResponse" readonly>FHIR Response here</textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

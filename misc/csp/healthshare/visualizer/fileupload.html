@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous">
+	</script>
+	<script src="js/simpleXML.js"></script>
+
+	<link rel="stylesheet" href="css/simpleXML.css">
+
+    <title>File Upload and API Call</title>
+</head>
+<body>
+    <header>
+        <h1>File Upload and API Call</h1>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Left Panel -->
+            <div class="panel left-panel" id="window1">
+                <h2>Source Data</h2>
+				<br/>
+                <input type="file" id="fileInput" accept=".txt, .xml" />
+				<br/>
+				<button onclick="displayFileContent()">Display File Content</button>
+                <button onclick="uploadFileToApi1()">Transform</button> 
+                <br/>
+                <textarea id="fileContent" placeholder="File content will be displayed here"></textarea>
+				<div id="prettyPrint"></div>
+
+                </div>
+
+            <!-- Right Panel -->
+            <div class="panel right-panel" id="window2">
+                <h2>Transformed Data</h2>
+               
+                <div class="tabs">
+                    <div onclick="openTab('sdaTab')">SDA</div>
+                    <div onclick="openTab('fhirTab')">FHIR</div>
+                </div>
+                <div id="sdaTab" class="tab-content">
+                    <textarea id="sdaResponse" >SDA Response here</textarea>
+                </div>
+                <div id="fhirTab" class="tab-content">
+                    <textarea id="fhirResponse" >FHIR Response here</textarea>
+                </div>
+            </div>
+            </div>
+			
+        </div>
+    </main>
+    <script src="js/file.js"></script>
+   
+</body>
+</html>
